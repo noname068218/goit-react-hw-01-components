@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const List = styled.li`
-  width: auto;
-`;
-
 export const Friend = styled.li`
   display: flex;
   align-items: center;
@@ -25,6 +21,7 @@ export const StatusIndicator = styled.span`
   height: 20px;
   border-radius: 50%;
   margin-right: 10px;
+  background: ${getStatusColor};
 `;
 
 export const Avatar = styled.img`
@@ -34,3 +31,12 @@ export const Avatar = styled.img`
 export const Name = styled.p`
   font-size: 24px;
 `;
+
+function getStatusColor(props) {
+  switch (props.$isOnline) {
+    case true:
+      return '#50AD53';
+    default:
+      return '#FF4F55';
+  }
+}
