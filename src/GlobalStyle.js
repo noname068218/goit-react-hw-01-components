@@ -22,4 +22,9 @@ img {
     display: block;
     max-width: 100%;
     object-fit: cover;
-}`;
+}
+
+ul {
+  list-style: none;
+}
+`;
