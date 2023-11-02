@@ -1,32 +1,15 @@
-import styled from 'styled-components';
+import {
+  Table,
+  TableHeader,
+  TableRow,
+  TableHeaderCell,
+  TableCell,
+  Tbody,
+} from './Transactions.Styled';
 
-const Table = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-`;
-
-const TableHeader = styled.thead`
-  background-color: #f2f2f2;
-`;
-
-const TableRow = styled.tr`
-  &:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-`;
-
-const TableHeaderCell = styled.th`
-  padding: 10px;
-`;
-
-const TableCell = styled.td`
-  padding: 10px;
-`;
-
-const TransactionHistory = ({ items }) => {
+export const TransactionHistory = ({ items }) => {
   return (
-    <Table className="transaction-history">
+    <Table>
       <TableHeader>
         <TableRow>
           <TableHeaderCell>Type</TableHeaderCell>
@@ -34,7 +17,7 @@ const TransactionHistory = ({ items }) => {
           <TableHeaderCell>Currency</TableHeaderCell>
         </TableRow>
       </TableHeader>
-      <tbody>
+      <Tbody>
         {items.map(item => (
           <TableRow key={item.id}>
             <TableCell>{item.type}</TableCell>
@@ -42,9 +25,7 @@ const TransactionHistory = ({ items }) => {
             <TableCell>{item.currency}</TableCell>
           </TableRow>
         ))}
-      </tbody>
+      </Tbody>
     </Table>
   );
 };
-
-export default TransactionHistory;
