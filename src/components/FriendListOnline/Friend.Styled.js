@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+export const FriendWraper = styled.ul`
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+`;
+
 export const Friend = styled.li`
   display: flex;
   align-items: center;
